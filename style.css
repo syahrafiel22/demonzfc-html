@@ -1,0 +1,901 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #700000;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  background-color: #990000;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
+  padding-left: 30px;
+  box-shadow: 0 4px 2px -1px rgba(0, 0, 0, 0.347);
+}
+
+.txtLogo {
+  float: right;
+  padding-top: 17px;
+  padding-left: 10px;
+}
+
+.aLogo {
+  color: aliceblue;
+  font-family: "Bebas Neue", sans-serif;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.pLogo {
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+  font-size: 10px;
+  padding-left: 19px;
+  margin-top: -7px;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: aliceblue;
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #d23636;
+  transition-duration: 0.8s;
+}
+
+nav ul li a:active {
+  color: goldenrod;
+  transition-duration: 0s;
+}
+
+/*Slideshow*/
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  margin: auto;
+  z-index: -2;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*Hamburger Menu*/
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -4px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  border-radius: 3px;
+  background-color: aliceblue;
+  transition: all 0.5s;
+}
+
+/*Hamburger Menu Animation*/
+/*Menggunakan Teknik CSS Sibling*/
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0; /*mengubah poros*/
+}
+
+.menu-toggle span:last-child {
+  transform-origin: 0 100%; /*mengubah poros*/
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.menu-toggle input:checked ~ span:last-child {
+  background-color: white;
+  transform: rotate(-45deg);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/*Welcome*/
+.welcome {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 140px;
+  margin-top: 120px;
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+  transition: transform 0.5s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome:hover {
+  transform: scale(1.1);
+}
+
+.wlcimg {
+  height: 180px;
+  width: 180px;
+}
+
+/*Berita*/
+.hnews {
+  color: aliceblue;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+}
+
+.news-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #302c2c;
+  color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Bayangan di belakang kotak */
+  transition: transform 0.5s; /* Transisi perubahan ketika di-zoom */
+  margin-bottom: 20px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-box:hover {
+  transform: scale(1.2);
+}
+
+.news-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.news-content {
+  padding: 20px;
+}
+
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.news-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.klasemen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tittle {
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 3);
+}
+
+.head-title {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  font-size: 40px;
+  color: aliceblue;
+}
+
+.lead {
+  letter-spacing: 1.5px;
+  font-size: 20px;
+  color: aliceblue;
+}
+
+table {
+  width: 1100px;
+  margin-top: 50px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+thead {
+  color: aliceblue;
+  background-color: #990000;
+}
+
+tbody {
+  color: goldenrod;
+  background-color: #1d2228;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.rank {
+  width: 50px;
+}
+
+.hteam {
+  width: 300px;
+}
+
+.team {
+  text-align: left;
+}
+
+td {
+  font-size: 20px;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+  border-bottom: 4px solid #700000;
+}
+
+tr {
+  border-bottom: 2px solid #700000;
+}
+
+.read-more {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/*Zoom Box*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.about-box {
+  width: 600px;
+  height: 50px;
+  margin-top: 30px;
+  background-color: rgb(0, 0, 0);
+  color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+/*.zoom-box {
+    width: 600px;
+    height: auto;
+    background-color: aliceblue;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Bayangan di belakang kotak *
+    transition: transform 0.5s; /* Transisi perubahan ketika di-zoom *
+    border-radius: 10px;
+    text-align: justify;
+    padding: 20px;
+  }
+  
+  /* CSS untuk efek zoom in *
+  .zoom-box:hover {
+    transform: scale(1.1); /* Perbesar ukuran kotak *
+  }*/
+
+/*Berita 1*/
+.beritacont {
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  margin: auto;
+  z-index: -2;
+}
+
+.imgberita {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imgberita img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  color: #fff;
+}
+
+.text-overlay h3 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 3);
+}
+
+/*Resposive Breakpoint*/
+
+@media screen and (max-width: 904px) {
+  .news-box{
+    width: 250px;
+    height: auto;
+  }
+
+  .news-image{
+    width: 250px;
+  }
+
+  .logo2{
+    display: flex;
+    width: auto;
+  }
+
+  .imgLogo2 {
+    height: 50px;
+    width: 50px;
+    padding-top: 11px;
+    margin-left: 20px;
+  }
+
+  .txtLogo2 {
+    padding-top: 11px;
+  }
+
+  .aLogo2 {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 16px;
+    margin-left: -8px;
+  }
+
+  .pLogo2 {
+    font-size: 6.5px;
+    margin-left: -19.5px;
+    margin-top: -2px;
+  }
+
+  .navfooter a {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+}
+
+/*ukuran tablet*/
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+
+  .news-container {
+    flex-direction: column; /* Mengubah tata letak menjadi kolom pada ukuran mobile */
+    align-items: center; /* Mengatur konten berada di tengah pada ukuran mobile */
+  }
+
+  .aboutteam {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .logo2{
+    display: flex;
+    width: auto;
+  }
+
+  .imgLogo2 {
+    height: 50px;
+    width: 50px;
+    padding-top: 11px;
+    margin-left: 20px;
+  }
+
+  .txtLogo2 {
+    padding-top: 11px;
+  }
+
+  .aLogo2 {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 16px;
+    margin-left: -8px;
+  }
+
+  .pLogo2 {
+    font-size: 6.5px;
+    margin-left: -19.5px;
+    margin-top: -2px;
+  }
+
+  .navfooter a {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/*ukuran mobile*/
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 84px;
+    width: 60%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slider {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .aboutteam{
+    align-items: center;
+  }
+
+  .logo2{
+    display: flex;
+    width: auto;
+    margin-bottom: 15px;
+  }
+
+  .imgLogo2 {
+    height: 50px;
+    width: 50px;
+    padding-top: 11px;
+  }
+
+  .txtLogo2 {
+    padding-top: 11px;
+  }
+
+  .aLogo2 {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 16px;
+    margin-left: -8px;
+  }
+
+  .pLogo2 {
+    font-size: 6.5px;
+    margin-left: -19.5px;
+    margin-top: -2px;
+  }
+
+  .navfooter{
+    position: absolute;
+    right: 65px;
+  }
+
+  .navfooter a {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/*ukuran Galaxy Fold atau width 280px*/
+@media screen and (max-width: 280px) {
+  .imgLogo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .txtLogo {
+    padding-top: 11px;
+  }
+
+  .aLogo {
+    font-size: 16px;
+    margin-left: -8px;
+  }
+
+  .pLogo {
+    font-size: 6.5px;
+    margin-left: -19.5px;
+    margin-top: -2px;
+  }
+}
+
+/*About us*/
+.aboutteam {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 0 25px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: #e8e8e8;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content .heading {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.content .para {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+#next {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+#next2 {
+  line-height: 1.5;
+  text-align: justify;
+}
+.content .btn {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content .btn2 {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: black;
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover::before {
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: none;
+}
+
+.card:hover .btn {
+  color: #212121;
+  background: #e8e8e8;
+}
+
+.content .btn:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.content .btn:active {
+  box-shadow: none;
+}
+
+/*berita 1*/
+.berita {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.card-berita {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 0 25px;
+}
+
+.content-berita {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  color: #e8e8e8;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content-berita .heading-berita {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.content .berita-1 {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+#text-berita {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.content-berita .btn-berita {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-berita::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: black;
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-berita:hover::before {
+  height: 100%;
+}
+
+.card-berita:hover {
+  box-shadow: none;
+}
+
+.card-berita:hover .btn-berita {
+  color: #212121;
+  background: #e8e8e8;
+}
+
+.content-berita .btn-berita:hover {
+  outline: 2px solid #e8e8e8;
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.content-berita .btn-berita:active {
+  box-shadow: none;
+}
+
+/*Contact*/
+#contact {
+  padding: 80px 0;
+  background-color: #302c2c;
+  color: rgb(255, 255, 255);
+  
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-info,
+.contact-form {
+  flex-basis: 48%;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  height: 120px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/*footer*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.logo2 {
+  margin-right: 30%;
+}
+
+.txtLogo2 {
+  float: right;
+  padding-top: 17px;
+  padding-left: 10px;
+}
+
+.aLogo2 {
+  color: aliceblue;
+  font-family: "Bebas Neue", sans-serif;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.pLogo2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: aliceblue;
+  font-size: 10px;
+  padding-left: 19px;
+  margin-top: -7px;
+  letter-spacing: 1px;
+}
+.navfooter {
+  display: flex;
+  margin-left: 30%;
+  margin-top: 30px;
+}
+
+.navfooter a {
+  margin-right: 20px;
+  color: aliceblue;
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 17px;
+}
